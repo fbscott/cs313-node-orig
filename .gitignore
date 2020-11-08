@@ -1,5 +1,6 @@
 # ignore the following sub folders
 submissions/
+**/node_modules
 
 # ignore the following file types
 *.sublime-workspace
