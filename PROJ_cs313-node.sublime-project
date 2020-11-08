@@ -1,0 +1,28 @@
+{
+   "folders":
+   [
+      {
+         "path": ".",
+         "folder_exclude_patterns":
+         [
+            ".git"
+         ],
+         "file_exclude_patterns":
+         [
+            "*.doc",
+            "*.docx",
+            "*.pdf",
+            "*.ppt",
+            "*.pptx",
+            "*.xls",
+            "*.xlsx",
+            "*.zip",
+            "app.json",
+            "composer.json",
+            "composer.lock",
+            "Procfile",
+            "PROJ_cs313-php.sublime-project"
+         ]
+      }
+   ]
+}
