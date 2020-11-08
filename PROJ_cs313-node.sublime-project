@@ -21,7 +21,7 @@
             "composer.json",
             "composer.lock",
             "Procfile",
-            "PROJ_cs313-php.sublime-project"
+            "PROJ_cs313-node.sublime-project"
          ]
       }
    ]
