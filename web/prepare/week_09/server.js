@@ -1,7 +1,7 @@
 var express = require('express');
 var app     = express();
 var User    = require('./models/user.js');
-var Welcome = require('./views/welcome.js');
+// var Welcome = require('./views/welcome.js');
 
 // allow server to use anything that lives in /public
 app.use(express.static('public'));
