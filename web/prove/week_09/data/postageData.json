@@ -1,0 +1,146 @@
+{
+   "stamped": [
+      {
+         "weight": 1,
+         "postage": "$0.55"
+      },
+      {
+         "weight": 2,
+         "postage": "$0.70"
+      },
+      {
+         "weight": 3,
+         "postage": "$0.85"
+      },
+      {
+         "weight": 3.5,
+         "postage": "$1.00"
+      }
+   ],
+   "metered": [
+      {
+         "weight": 1,
+         "postage": "$0.50"
+      },
+      {
+         "weight": 2,
+         "postage": "$0.65"
+      },
+      {
+         "weight": 3,
+         "postage": "$0.80"
+      },
+      {
+         "weight": 3.5,
+         "postage": "$0.95"
+      }
+   ],
+   "flats": [
+      {
+         "weight": 1,
+         "postage": "$1.00"
+      },
+      {
+         "weight": 2,
+         "postage": "$1.20"
+      },
+      {
+         "weight": 3,
+         "postage": "$1.40"
+      },
+      {
+         "weight": 4,
+         "postage": "$1.60"
+      },
+      {
+         "weight": 5,
+         "postage": "$1.80"
+      },
+      {
+         "weight": 6,
+         "postage": "$2.00"
+      },
+      {
+         "weight": 7,
+         "postage": "$2.20"
+      },
+      {
+         "weight": 8,
+         "postage": "$2.40"
+      },
+      {
+         "weight": 9,
+         "postage": "$2.60"
+      },
+      {
+         "weight": 10,
+         "postage": "$2.80"
+      },
+      {
+         "weight": 11,
+         "postage": "$3.00"
+      },
+      {
+         "weight": 12,
+         "postage": "$3.20"
+      },
+      {
+         "weight": 13,
+         "postage": "$3.40"
+      }
+   ],
+   "retail": [
+      {
+         "weight": 1,
+         "postage": "$3.80"
+      },
+      {
+         "weight": 2,
+         "postage": "$3.80"
+      },
+      {
+         "weight": 3,
+         "postage": "$3.80"
+      },
+      {
+         "weight": 4,
+         "postage": "$3.80"
+      },
+      {
+         "weight": 5,
+         "postage": "$4.60"
+      },
+      {
+         "weight": 6,
+         "postage": "$4.60"
+      },
+      {
+         "weight": 7,
+         "postage": "$4.60"
+      },
+      {
+         "weight": 8,
+         "postage": "$4.60"
+      },
+      {
+         "weight": 9,
+         "postage": "$5.30"
+      },
+      {
+         "weight": 10,
+         "postage": "$5.30"
+      },
+      {
+         "weight": 11,
+         "postage": "$5.30"
+      },
+      {
+         "weight": 12,
+         "postage": "$5.30"
+      },
+      {
+         "weight": 13,
+         "postage": "$5.90"
+      }
+   ]
+}

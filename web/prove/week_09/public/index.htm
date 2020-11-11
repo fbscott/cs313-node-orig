@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/_reset.css">
+  <link rel="stylesheet" href="./assets/css/_base.css">
+  <link rel="stylesheet" href="./assets/css/_grid.css">
+  <title>Postal Calculator</title>
+</head>
+<body>
+
+  <div class="row">
+    <div class="columns large-8 large-offset-2 end">
+
+      <div class="row">
+        <div class="column">
+          <h1>Postage Calculator</h1>
+          <p>Calculate the postage required for a single piece of retail first-class mail.</p>
+          <h2>Enter the details for your parcel below.</h2>
+        </div>
+      </div>
+
+      <!---------------------------------- form ---------------------------------->
+      <form action="/postage-rate" method="GET">
+        <div class="row">
+
+          <div class="columns large-7">
+            <label for="type">Select a parcel type</label>
+            <select id="type" name="type" onChange="log()" required>
+              <option value="" selected="true" disabled> -- </option>
+              <option value="stamped">Letters (Stamped)</option>
+              <option value="metered">Letters (Metered)</option>
+              <option value="flats">Large Envelopes (Flats)</option>
+              <option value="retail">First-Class Package Service (Retail)</option>
+            </select>
+          </div><!-- /column -->
+
+          <div class="columns large-5">
+            <label for="weight">Select a parcel weight</label>
+            <select id="weight" name="weight" required>
+              <option value="" selected="true" disabled> -- </option>
+            </select>
+          </div><!-- /column -->
+
+        </div><!-- /row -->
+        <div class="row">
+          <div class="column">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+      <!---------------------------------- /form --------------------------------->
+
+    </div>
+  </div>
+
+  <script>
+    function log(type) {
+      var type   = document.getElementById('type');
+      var weight = document.getElementById('weight');
+
+      if (type.value === 'stamped' || type.value === 'metered') {
+        weight.innerHTML = `<option value="" selected="true" disabled> -- </option>
+                            <option value="1">1 oz</option>
+                            <option value="2">2 oz</option>
+                            <option value="3">3 oz</option>
+                            <option value="3.5">3.5 oz</option>`;
+      } else if (type.value === 'flats' || type.value === 'retail') {
+        weight.innerHTML = `<option value="" selected="true" disabled> -- </option>
+                            <option value="1">1 oz</option>
+                            <option value="2">2 oz</option>
+                            <option value="3">3 oz</option>
+                            <option value="4">4 oz</option>
+                            <option value="5">5 oz</option>
+                            <option value="6">6 oz</option>
+                            <option value="7">7 oz</option>
+                            <option value="8">8 oz</option>
+                            <option value="9">9 oz</option>
+                            <option value="10">10 oz</option>
+                            <option value="11">11 oz</option>
+                            <option value="12">12 oz</option>
+                            <option value="13">13 oz</option>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
