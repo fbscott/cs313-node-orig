@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Math</title>
+  </head>
+  <body>
+    <h1>Math</h1>
+    <form id="math-form" action="/math" method="GET">
+      <p>What would you like to calculate today?</p>
+    
+      <input name="operand1" size="5">
+      
+      <select name="operation">
+        <option value="a">+</option>
+        <option value="s">-</option>
+        <option value="m">*</option>
+        <option value="d">/</option>
+      </select>
+      
+      <input name="operand2" size="5">
+      
+      <button type="submit">Submit</button>
+      <button type="button" onclick="showResult();">Show Result</button>
+    </form>
+    
+    <p id="result"></p>
+    
+    <script>
+      function showResult() {
+        var form = document.getElementById('math-form');
+//         var operation = form.elements['operation'].value;
+//         var operand1 = form.elements['operand1'].value;
+//         var operand2 = form.elements['operand2'].value;
+        
+        var xhttp = new XMLHttpRequest();
+          var elements = form.elements;
+          var queryString = '';
+          for(var i = 0 ; i < elements.length ; i++) {
+            var item = elements.item(i);
+            queryString += item.name + '=' + item.value + '&';
+          }
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+           document.getElementById("result").innerHTML = "The answer is: " + JSON.parse(this.responseText)['result'];
+          }
+        };
+        xhttp.open("GET", "/math_service?" + queryString, true);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>
