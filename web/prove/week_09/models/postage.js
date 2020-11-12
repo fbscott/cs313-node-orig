@@ -1,3 +1,7 @@
+/*******************************************************************************
+ * model
+ ******************************************************************************/
+
 'use strict';
 
 var _ = require('underscore');
@@ -9,8 +13,8 @@ class Postage {
         this.weight = options.weight;
     }
 
-    getRate() {
-        var postage = _.find(this.data[this.type], key => {
+    setRate() {
+        let postage = _.find(this.data[this.type], key => {
             return key.weight === parseFloat(this.weight);
         }).postage;
 
