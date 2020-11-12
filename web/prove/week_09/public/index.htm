@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="./assets/css/_reset.css">
   <link rel="stylesheet" href="./assets/css/_base.css">
   <link rel="stylesheet" href="./assets/css/_grid.css">
-  <title>Postal Calculator</title>
+  <title>Postage Calculator</title>
 </head>
 <body>
 
@@ -16,8 +16,8 @@
       <div class="row">
         <div class="column">
           <h1>Postage Calculator</h1>
-          <p>Calculate the postage required for a single piece of retail first-class mail.</p>
-          <h2>Enter the details for your parcel below.</h2>
+          <p>Calculate the postage required for a single piece of Retail First-Class mail.</p>
+          <h2>Enter the details for your mail below.</h2>
         </div>
       </div>
 
@@ -25,19 +25,19 @@
       <form action="/postage-rate" method="GET">
         <div class="row">
 
-          <div class="columns large-7">
-            <label for="type">Select a parcel type</label>
-            <select id="type" name="type" onChange="log()" required>
+          <div class="columns large-8">
+            <label for="type">Select a mail type</label>
+            <select id="type" name="type" onChange="updateSelect()" required>
               <option value="" selected="true" disabled> -- </option>
-              <option value="stamped">Letters (Stamped)</option>
-              <option value="metered">Letters (Metered)</option>
-              <option value="flats">Large Envelopes (Flats)</option>
-              <option value="retail">First-Class Package Service (Retail)</option>
+              <option value="stamped">Stamped Letter</option>
+              <option value="metered">Metered Letter</option>
+              <option value="flats">Large Envelope (flats)</option>
+              <option value="retail">First-Class Package Service (retail)</option>
             </select>
           </div><!-- /column -->
 
-          <div class="columns large-5">
-            <label for="weight">Select a parcel weight</label>
+          <div class="columns large-4">
+            <label for="weight">Select a mail weight</label>
             <select id="weight" name="weight" required>
               <option value="" selected="true" disabled> -- </option>
             </select>
@@ -56,31 +56,39 @@
   </div>
 
   <script>
-    function log(type) {
-      var type   = document.getElementById('type');
-      var weight = document.getElementById('weight');
+    // Postage Calculator (PC)
+    var PC = PC || {
+      type:   document.getElementById('type'),
+      weight: document.getElementById('weight')
+    };
 
-      if (type.value === 'stamped' || type.value === 'metered') {
-        weight.innerHTML = `<option value="" selected="true" disabled> -- </option>
-                            <option value="1">1 oz</option>
-                            <option value="2">2 oz</option>
-                            <option value="3">3 oz</option>
-                            <option value="3.5">3.5 oz</option>`;
-      } else if (type.value === 'flats' || type.value === 'retail') {
-        weight.innerHTML = `<option value="" selected="true" disabled> -- </option>
-                            <option value="1">1 oz</option>
-                            <option value="2">2 oz</option>
-                            <option value="3">3 oz</option>
-                            <option value="4">4 oz</option>
-                            <option value="5">5 oz</option>
-                            <option value="6">6 oz</option>
-                            <option value="7">7 oz</option>
-                            <option value="8">8 oz</option>
-                            <option value="9">9 oz</option>
-                            <option value="10">10 oz</option>
-                            <option value="11">11 oz</option>
-                            <option value="12">12 oz</option>
-                            <option value="13">13 oz</option>`;
+    window.onload = function() {
+      PC.type.value   = "";
+      PC.weight.value = "";
+    }
+
+    function updateSelect() {
+      if (PC.type.value === 'stamped' || PC.type.value === 'metered') {
+        PC.weight.innerHTML = `<option value="" selected="true" disabled> -- </option>
+                            <option value="1">up to 1 oz</option>
+                            <option value="2">up to 2 oz</option>
+                            <option value="3">up to 3 oz</option>
+                            <option value="3.5">up to 3.5 oz</option>`;
+      } else if (PC.type.value === 'flats' || PC.type.value === 'retail') {
+        PC.weight.innerHTML = `<option value="" selected="true" disabled> -- </option>
+                            <option value="1">up to 1 oz</option>
+                            <option value="2">up to 2 oz</option>
+                            <option value="3">up to 3 oz</option>
+                            <option value="4">up to 4 oz</option>
+                            <option value="5">up to 5 oz</option>
+                            <option value="6">up to 6 oz</option>
+                            <option value="7">up to 7 oz</option>
+                            <option value="8">up to 8 oz</option>
+                            <option value="9">up to 9 oz</option>
+                            <option value="10">up to 10 oz</option>
+                            <option value="11">up to 11 oz</option>
+                            <option value="12">up to 12 oz</option>
+                            <option value="13">up to 13 oz</option>`;
       }
     }
   </script>

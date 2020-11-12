@@ -6,23 +6,61 @@
   <link rel="stylesheet" href="./assets/css/_reset.css">
   <link rel="stylesheet" href="./assets/css/_base.css">
   <link rel="stylesheet" href="./assets/css/_grid.css">
-  <title>Result</title>
+  <title>Postage Calculator</title>
 </head>
 <body>
-  
+
   <div class="row">
     <div class="columns large-8 large-offset-2 end">
-      
+
       <div class="row">
         <div class="column">
-          <h1>Postage Needed</h1>
-          <p>You selected <%= type %> with a weight of <%= weight %>.</p>
-          <p>Postage rates: <%= postage %></p>
+          <h1>Postage Calculator</h1>
+          <p>Find your postage calculation below.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <table>
+            <tr>
+              <th>Mail Type</th>
+              <th>Weight</th>
+              <th>Cost</th>
+            </tr>
+            <tr>
+              <td>
+                <% if(type === 'stamped') { %>
+                  Stamped Letter
+                <% } else if(type === 'metered') { %>
+                  Metered Letter
+                <% } else if(type === 'flats') { %>
+                  Large Envelope (flats)
+                <% } else if(type === 'retail') { %>
+                  First-Class Package Service (retail)
+                <% } %>
+              </td>
+              <td>up to <%= weight %> oz</td>
+              <td><%= postage %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="columns">
+          <button onClick="goBack();">Home</button>
         </div>
       </div>
 
     </div>
   </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 
 </body>
 </html>

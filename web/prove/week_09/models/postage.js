@@ -11,7 +11,7 @@ class Postage {
 
     getRate() {
         var postage = _.find(this.data[this.type], key => {
-            return key.weight === parseInt(this.weight);
+            return key.weight === parseFloat(this.weight);
         }).postage;
 
         this.postage = postage;
